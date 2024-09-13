@@ -6,11 +6,9 @@ def sum_values(args):
             x += sum_values(i)
         elif isinstance(i, dict):
             x += sum_values(i.items())
-        elif isinstance(i, int):
+        elif isinstance(i, (int,float)):
             x += i
         elif isinstance(i, str):
-            x += len(i)
-        elif isinstance(i, dict):
             x += len(i)
     return x
 
@@ -23,5 +21,5 @@ data_structure = [
   ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
-a =[([2,3], {'a': 2}, (1, [1]))]
+
 print(sum_values(data_structure))
